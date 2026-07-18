@@ -1,0 +1,1737 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portafolio de Diego Stefano Davila Diaz: desarrollo de software, operaciones TI y automatización.">
+  <meta name="theme-color" content="#101820">
+  <title>Diego Dávila | Desarrollo de Software y Operaciones TI</title>
+  <style>
+    :root {
+      --ink: #101820;
+      --ink-soft: #26343a;
+      --paper: #f6f8f7;
+      --white: #ffffff;
+      --line: #d8dfdc;
+      --teal: #19766f;
+      --teal-dark: #105d58;
+      --coral: #d45e4c;
+      --yellow: #f2b632;
+      --blue: #2d6f91;
+      --nav-height: 66px;
+      --max-width: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-height) + 20px);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+      letter-spacing: 0;
+    }
+
+    body,
+    button,
+    a { -webkit-font-smoothing: antialiased; }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a { color: inherit; }
+
+    button,
+    a { -webkit-tap-highlight-color: transparent; }
+
+    button { font: inherit; }
+
+    .skip-link {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+      z-index: 100;
+      padding: 9px 12px;
+      color: var(--white);
+      background: var(--ink);
+      transform: translateY(-150%);
+    }
+
+    .skip-link:focus { transform: translateY(0); }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: var(--nav-height);
+      border-bottom: 1px solid rgba(16, 24, 32, .12);
+      background: rgba(255, 255, 255, .96);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      height: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav::-webkit-scrollbar { display: none; }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      flex: 0 0 auto;
+      font-size: 17px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: var(--teal); }
+
+    .nav-download {
+      padding: 8px 12px;
+      border: 1px solid var(--ink);
+      border-radius: 6px;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      align-items: end;
+      min-height: calc(82svh - var(--nav-height));
+      overflow: hidden;
+      color: var(--white);
+      background: linear-gradient(135deg, #172d33, var(--ink));
+      isolation: isolate;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      padding-block: 60px 70px;
+    }
+
+    .hero-mark {
+      position: absolute;
+      top: 50%;
+      right: max(7vw, 40px);
+      display: grid;
+      width: min(29vw, 420px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .94);
+      place-items: center;
+      transform: translateY(-50%);
+    }
+
+    .hero-mark img { width: 68%; }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: #d7f0ed;
+      font-size: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .availability {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      width: fit-content;
+      margin: 0 0 16px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .availability::before {
+      width: 9px;
+      height: 9px;
+      border: 2px solid rgba(255, 255, 255, .55);
+      border-radius: 50%;
+      background: #64d3a4;
+      content: "";
+      animation: pulse 2.2s ease-out infinite;
+    }
+
+    .hero h1 {
+      max-width: 720px;
+      margin: 0;
+      font-size: 64px;
+      line-height: 1.02;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .hero-lead {
+      max-width: 660px;
+      margin: 20px 0 0;
+      font-size: 21px;
+      line-height: 1.45;
+      text-wrap: pretty;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
+    }
+
+    .button-primary {
+      color: var(--ink);
+      background: var(--white);
+    }
+
+    .button-secondary {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, .7);
+      background: rgba(16, 24, 32, .35);
+    }
+
+    .button:hover { transform: translateY(-1px); }
+
+    .section {
+      padding: 84px 0;
+    }
+
+    .about-section {
+      padding: 58px 0;
+      background: var(--white);
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 680px);
+      gap: 46px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-photo {
+      width: 210px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 12px 12px 0 #dceae6;
+    }
+
+    .about-copy h2 {
+      margin: 0 0 16px;
+      font-size: 38px;
+      line-height: 1.08;
+    }
+
+    .about-copy p:last-child {
+      margin: 0;
+      color: #46565e;
+      font-size: 18px;
+      text-wrap: pretty;
+    }
+
+    .section-white { background: var(--white); }
+
+    .section-dark {
+      color: var(--white);
+      background: var(--ink);
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
+      gap: 64px;
+      align-items: start;
+      margin-bottom: 48px;
+    }
+
+    .section-kicker {
+      margin: 0 0 10px;
+      color: var(--teal);
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .section-dark .section-kicker { color: #78c9c0; }
+
+    .section h2 {
+      margin: 0;
+      font-size: 42px;
+      line-height: 1.08;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .section-intro {
+      max-width: 700px;
+      margin: 0;
+      color: #46565e;
+      font-size: 19px;
+      text-wrap: pretty;
+    }
+
+    .section-dark .section-intro { color: #cad4d1; }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .focus-item {
+      min-width: 0;
+      padding: 32px;
+      border-right: 1px solid var(--line);
+    }
+
+    .focus-item:first-child { padding-left: 0; }
+    .focus-item:last-child {
+      padding-right: 0;
+      border-right: 0;
+    }
+
+    .focus-index {
+      color: var(--coral);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .focus-item h3 {
+      margin: 14px 0 8px;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .focus-item p {
+      margin: 0;
+      color: #526269;
+    }
+
+    .services-section {
+      padding: 74px 0;
+      border-top: 1px solid #cbd8d3;
+      border-bottom: 1px solid #cbd8d3;
+      background: #eaf2ef;
+    }
+
+    .services-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 36px;
+    }
+
+    .services-heading h2 {
+      max-width: 700px;
+      margin: 0;
+      font-size: 38px;
+      line-height: 1.1;
+    }
+
+    .services-heading .button {
+      flex: 0 0 auto;
+      color: var(--white);
+      background: var(--teal-dark);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-top: 1px solid #b8c9c3;
+      border-bottom: 1px solid #b8c9c3;
+    }
+
+    .service-item {
+      min-width: 0;
+      padding: 28px 24px;
+      border-right: 1px solid #b8c9c3;
+    }
+
+    .service-item:first-child { padding-left: 0; }
+    .service-item:last-child {
+      padding-right: 0;
+      border-right: 0;
+    }
+
+    .service-item strong {
+      display: block;
+      margin-bottom: 9px;
+      font-size: 19px;
+    }
+
+    .service-item p {
+      margin: 0;
+      color: #4b5d63;
+      font-size: 15px;
+    }
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .skills-copy h2 { max-width: 500px; }
+
+    .skills-copy p {
+      max-width: 560px;
+      margin: 22px 0 0;
+      color: #cad4d1;
+      font-size: 18px;
+    }
+
+    .skill-groups {
+      border-top: 1px solid #405058;
+    }
+
+    .skill-group {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 24px;
+      padding: 22px 0;
+      border-bottom: 1px solid #405058;
+    }
+
+    .skill-group h3 {
+      margin: 0;
+      color: #80d1c7;
+      font-size: 15px;
+    }
+
+    .skill-group p {
+      margin: 0;
+      color: #eef3f1;
+    }
+
+    .timeline {
+      max-width: 940px;
+      margin-left: auto;
+      border-left: 2px solid var(--line);
+    }
+
+    .timeline-entry {
+      position: relative;
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 30px;
+      padding: 0 0 38px 36px;
+    }
+
+    .timeline-entry:last-child { padding-bottom: 0; }
+
+    .timeline-entry::before {
+      position: absolute;
+      top: 5px;
+      left: -7px;
+      width: 12px;
+      height: 12px;
+      border: 2px solid var(--white);
+      border-radius: 50%;
+      background: var(--teal);
+      content: "";
+      box-shadow: 0 0 0 1px var(--teal);
+    }
+
+    .timeline-date {
+      margin: 0;
+      color: #66757b;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .timeline-entry h3 {
+      margin: 0 0 5px;
+      font-size: 19px;
+      line-height: 1.25;
+    }
+
+    .timeline-company {
+      margin: 0 0 10px;
+      color: var(--teal-dark);
+      font-weight: 700;
+    }
+
+    .timeline-entry ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #45545b;
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 0;
+      width: max-content;
+      max-width: 100%;
+      margin: 0 0 34px;
+      overflow-x: auto;
+      border: 1px solid #aebbb7;
+      border-radius: 6px;
+      background: var(--white);
+      scrollbar-width: none;
+    }
+
+    .filter-bar::-webkit-scrollbar { display: none; }
+
+    .filter-button {
+      flex: 0 0 auto;
+      padding: 10px 15px;
+      border: 0;
+      border-right: 1px solid #aebbb7;
+      color: var(--ink-soft);
+      background: transparent;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .filter-button:last-child { border-right: 0; }
+
+    .filter-button[aria-pressed="true"] {
+      color: var(--white);
+      background: var(--teal-dark);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      display: flex;
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      flex-direction: column;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+
+    .project-card[hidden] { display: none; }
+
+    .project-card-featured { grid-column: span 2; }
+
+    .project-card-featured .project-description { max-width: 800px; }
+
+    .project-visual {
+      position: relative;
+      display: grid;
+      min-height: 190px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      place-items: center;
+    }
+
+    .project-visual > * { transition: transform .3s ease; }
+
+    .enrollment-preview {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 12px;
+      width: calc(100% - 40px);
+      padding: 14px;
+      border: 1px solid #c4d1cd;
+      border-radius: 6px;
+      background: #f8fbfa;
+      box-shadow: 0 12px 28px rgba(16, 24, 32, .12);
+    }
+
+    .enrollment-panel {
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid #d7e0dd;
+      border-radius: 4px;
+      background: var(--white);
+    }
+
+    .enrollment-panel strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--teal-dark);
+      font-size: 12px;
+    }
+
+    .form-line {
+      height: 7px;
+      margin-top: 7px;
+      border-radius: 2px;
+      background: #dfe8e5;
+    }
+
+    .form-line.short { width: 66%; }
+
+    .admin-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .admin-metrics span {
+      display: grid;
+      min-height: 38px;
+      border-radius: 3px;
+      color: var(--white);
+      background: var(--blue);
+      font-size: 10px;
+      font-weight: 800;
+      place-items: center;
+    }
+
+    .admin-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-top: 1px solid #e1e7e5;
+      color: #4d5e64;
+      font-size: 10px;
+    }
+
+    .project-visual img {
+      width: 100%;
+      height: 190px;
+      object-fit: contain;
+    }
+
+    .visual-biometric { background: #0d7bc0; }
+
+    .visual-biometric img {
+      width: 118px;
+      height: 118px;
+    }
+
+    .visual-finance {
+      background: #eff6f6;
+    }
+
+    .visual-finance img {
+      width: 150px;
+      height: 150px;
+    }
+
+    .visual-uni {
+      padding: 30px;
+      background: #fff;
+    }
+
+    .visual-uni img {
+      width: 220px;
+      height: auto;
+    }
+
+    .mini-window {
+      width: calc(100% - 44px);
+      border: 1px solid #bcc7c3;
+      border-radius: 6px;
+      background: var(--white);
+      box-shadow: 0 12px 24px rgba(16, 24, 32, .1);
+    }
+
+    .mini-window-bar {
+      display: flex;
+      gap: 5px;
+      padding: 8px 10px;
+      border-bottom: 1px solid #dce3e0;
+      background: #edf1ef;
+    }
+
+    .mini-window-bar i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #9ca9a4;
+    }
+
+    .crm-flow {
+      display: grid;
+      gap: 8px;
+      padding: 18px;
+    }
+
+    .crm-flow span {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 9px;
+      border-left: 3px solid var(--teal);
+      background: #f2f7f5;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .crm-flow small { color: #687872; }
+
+    .document-flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      width: 100%;
+      height: 100%;
+      background: #ecf3f1;
+    }
+
+    .document {
+      display: grid;
+      width: 78px;
+      height: 96px;
+      border: 1px solid #9fb0aa;
+      border-radius: 4px;
+      color: var(--ink);
+      background: var(--white);
+      font-size: 18px;
+      font-weight: 900;
+      place-items: center;
+    }
+
+    .document.tex {
+      color: var(--white);
+      border-color: var(--teal-dark);
+      background: var(--teal-dark);
+    }
+
+    .flow-arrow {
+      color: var(--coral);
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .store-preview {
+      width: calc(100% - 38px);
+      padding: 16px;
+      border-radius: 6px;
+      color: #27333a;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(16, 24, 32, .12);
+    }
+
+    .store-preview strong {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--coral);
+    }
+
+    .store-row {
+      display: grid;
+      grid-template-columns: 34px 1fr auto;
+      gap: 9px;
+      align-items: center;
+      padding: 7px 0;
+      border-top: 1px solid #e2e8e5;
+      font-size: 11px;
+    }
+
+    .store-row i {
+      height: 26px;
+      border-radius: 3px;
+      background: #d9e4df;
+    }
+
+    .attendance-preview {
+      width: calc(100% - 40px);
+      padding: 16px;
+      border-radius: 6px;
+      color: #eaf4f1;
+      background: #15252b;
+      box-shadow: 0 12px 26px rgba(16, 24, 32, .18);
+    }
+
+    .camera-frame {
+      display: grid;
+      height: 64px;
+      margin-bottom: 10px;
+      border: 1px solid #3f5b64;
+      color: #73cfc4;
+      background: #0b1418;
+      font-size: 12px;
+      place-items: center;
+    }
+
+    .attendance-preview p {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0 0;
+      font-size: 11px;
+    }
+
+    .followup-table {
+      width: calc(100% - 38px);
+      border-collapse: collapse;
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: 0 12px 24px rgba(16, 24, 32, .12);
+      font-size: 11px;
+    }
+
+    .followup-table th,
+    .followup-table td {
+      padding: 8px;
+      border-bottom: 1px solid #e2e8e5;
+      text-align: left;
+    }
+
+    .followup-table th {
+      color: var(--white);
+      background: var(--blue);
+    }
+
+    .terminal {
+      width: calc(100% - 38px);
+      padding: 16px;
+      border: 1px solid #33444b;
+      border-radius: 6px;
+      color: #bce7df;
+      background: #10191e;
+      box-shadow: 0 12px 24px rgba(16, 24, 32, .2);
+      font: 12px/1.65 "Courier New", monospace;
+    }
+
+    .terminal b { color: #f2c35b; }
+
+    .project-content {
+      display: flex;
+      flex: 1;
+      padding: 22px;
+      flex-direction: column;
+    }
+
+    .project-type {
+      margin: 0 0 8px;
+      color: var(--teal-dark);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .project-card h3 {
+      margin: 0;
+      font-size: 21px;
+      line-height: 1.2;
+    }
+
+    .project-description {
+      margin: 12px 0 18px;
+      color: #526168;
+      font-size: 15px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: auto 0 18px;
+    }
+
+    .tag {
+      padding: 4px 7px;
+      border: 1px solid #cad4d0;
+      border-radius: 999px;
+      color: #405159;
+      background: #f6f8f7;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 28px;
+      padding-top: 14px;
+      border-top: 1px solid #e1e6e4;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .project-link {
+      color: var(--teal-dark);
+      text-decoration: none;
+    }
+
+    .project-link:hover { text-decoration: underline; }
+
+    .private-label { color: #7a6761; }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 60px;
+    }
+
+    .education-column h3 {
+      margin: 0 0 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--ink);
+      font-size: 21px;
+    }
+
+    .education-item {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .education-item strong {
+      display: block;
+      font-size: 17px;
+    }
+
+    .education-item p {
+      margin: 4px 0 0;
+      color: #53636a;
+    }
+
+    .contact-section {
+      padding: 86px 0;
+      color: var(--white);
+      background: var(--teal-dark);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 70px;
+      align-items: end;
+    }
+
+    .contact-section h2 {
+      max-width: 760px;
+      margin: 0;
+      font-size: 48px;
+      line-height: 1.08;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .contact-section p {
+      max-width: 670px;
+      margin: 18px 0 0;
+      color: #d1ece8;
+      font-size: 18px;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 10px;
+      justify-items: start;
+    }
+
+    .contact-links a {
+      color: var(--white);
+      font-size: 17px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .contact-links a:hover { text-decoration: underline; }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .contact-actions .button-primary {
+      color: var(--teal-dark);
+      background: var(--white);
+    }
+
+    .contact-actions .button-secondary {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, .7);
+      background: transparent;
+    }
+
+    .contact-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 45;
+      padding: 12px 16px;
+      border: 1px solid rgba(255, 255, 255, .55);
+      border-radius: 6px;
+      color: var(--white);
+      background: var(--coral);
+      box-shadow: 0 12px 28px rgba(16, 24, 32, .24);
+      font-size: 14px;
+      font-weight: 900;
+      text-decoration: none;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(14px);
+      transition: opacity .2s ease, transform .2s ease;
+    }
+
+    .contact-float.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .motion-ready .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+
+    .motion-ready .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-links a.is-active { color: var(--teal); }
+
+    footer {
+      padding: 26px 0;
+      color: #b8c4c0;
+      background: var(--ink);
+    }
+
+    .footer-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    footer p { margin: 0; }
+
+    :focus-visible {
+      outline: 3px solid var(--yellow);
+      outline-offset: 3px;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(100, 211, 164, .5); }
+      70% { box-shadow: 0 0 0 8px rgba(100, 211, 164, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(100, 211, 164, 0); }
+    }
+
+    @media (hover: hover) {
+      .project-card:hover {
+        border-color: #aebfba;
+        box-shadow: 0 16px 34px rgba(16, 24, 32, .11);
+        transform: translateY(-5px);
+      }
+
+      .project-card:hover .project-visual > * { transform: scale(1.025); }
+    }
+
+    @media (max-width: 980px) {
+      .hero h1 { font-size: 52px; }
+      .section-header,
+      .skills-layout,
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .service-item:nth-child(2) { border-right: 0; }
+      .service-item:nth-child(-n + 2) { border-bottom: 1px solid #b8c9c3; }
+      .service-item:nth-child(3) { padding-left: 0; }
+      .timeline { margin-left: 0; }
+    }
+
+    @media (max-width: 720px) {
+      :root { --nav-height: 60px; }
+      .container { width: min(calc(100% - 28px), var(--max-width)); }
+      .nav { gap: 16px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 13px; }
+      .nav-links a[href="#sobre-mi"],
+      .nav-links a[href="#experiencia"] { display: none; }
+      .nav-download { display: none; }
+      .hero {
+        min-height: calc(82svh - var(--nav-height));
+        background: linear-gradient(160deg, #172d33, var(--ink));
+      }
+      .hero-mark {
+        top: 12px;
+        right: 50%;
+        width: 160px;
+        transform: translateX(50%);
+      }
+      .hero-content { padding-block: 42px 48px; }
+      .eyebrow { font-size: 12px; }
+      .hero h1 { font-size: 38px; }
+      .hero-lead {
+        margin-top: 14px;
+        font-size: 17px;
+      }
+      .actions { margin-top: 22px; }
+      .button { width: 100%; }
+      .about-section { padding: 50px 0; }
+      .about-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .about-photo {
+        width: 180px;
+        margin-inline: auto;
+      }
+      .about-copy h2 { font-size: 32px; }
+      .about-copy p:last-child { font-size: 17px; }
+      .section { padding: 64px 0; }
+      .services-section { padding: 58px 0; }
+      .services-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .services-heading h2 { font-size: 31px; }
+      .services-heading .button { width: 100%; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-item,
+      .service-item:first-child,
+      .service-item:nth-child(3) {
+        padding: 22px 0;
+        border-right: 0;
+        border-bottom: 1px solid #b8c9c3;
+      }
+      .service-item:last-child { border-bottom: 0; }
+      .section-header { margin-bottom: 34px; }
+      .section h2 { font-size: 32px; }
+      .section-intro { font-size: 17px; }
+      .filter-button { padding-inline: 10px; }
+      .focus-grid { grid-template-columns: 1fr; }
+      .focus-item {
+        padding: 24px 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .focus-item:last-child { border-bottom: 0; }
+      .skill-group {
+        grid-template-columns: 1fr;
+        gap: 7px;
+      }
+      .timeline-entry {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding-left: 28px;
+      }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card-featured { grid-column: span 1; }
+      .enrollment-preview {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .project-visual { min-height: 176px; }
+      .education-grid { grid-template-columns: 1fr; gap: 42px; }
+      .contact-section { padding: 64px 0; }
+      .contact-section h2 { font-size: 34px; }
+      .contact-actions .button { width: 100%; }
+      .contact-float {
+        display: none;
+      }
+      .footer-layout {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+      .availability::before { animation: none; }
+      .motion-ready .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="#inicio">
+        <img src="assets/logo-diego.png" alt="" width="38" height="38">
+        <span>Diego Dávila</span>
+      </a>
+      <div class="nav-links">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+        <a class="nav-download" href="assets/CV-Diego-Davila-Diaz.pdf" download>Descargar CV</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-content">
+          <p class="availability">Disponible para nuevos proyectos y oportunidades</p>
+          <p class="eyebrow">Desarrollo de software · Operaciones TI · Automatización</p>
+          <h1 id="hero-title">Diego Stefano Dávila Díaz</h1>
+          <p class="hero-lead">Transformo necesidades de negocio en páginas, sistemas, APIs y automatizaciones claras, mantenibles y orientadas a resultados.</p>
+          <div class="actions">
+            <a class="button button-primary" href="mailto:diegostd99@gmail.com?subject=Consulta%20por%20un%20proyecto%20de%20software">Cuéntame tu proyecto</a>
+            <a class="button button-secondary" href="#proyectos">Ver proyectos</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-mark" aria-hidden="true">
+        <img src="assets/logo-diego.png" alt="">
+      </div>
+    </section>
+
+    <section class="about-section" id="sobre-mi" aria-labelledby="about-title">
+      <div class="container about-layout">
+        <img class="about-photo" src="assets/diego-davila.jpg" alt="Diego Dávila" width="1023" height="1537" loading="lazy">
+        <div class="about-copy">
+          <p class="section-kicker">Conóceme</p>
+          <h2 id="about-title">Sobre mí</h2>
+          <p>Soy Diego, desarrollador de software con experiencia en operaciones TI. Me gusta entender cómo funciona un proceso antes de convertirlo en una solución práctica: desde una web o API hasta una automatización que ahorre tiempo. Estudio Ingeniería de Sistemas en la UPC y soy egresado de Computación e Informática en Cibertec.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" id="servicios">
+      <div class="container">
+        <div class="services-heading">
+          <div>
+            <p class="section-kicker">Servicios</p>
+            <h2>¿Necesitas una solución digital para tu negocio o institución?</h2>
+          </div>
+          <a class="button" href="https://wa.me/51995191368?text=Hola%20Diego%2C%20quiero%20solicitar%20una%20propuesta%20para%20un%20proyecto" target="_blank" rel="noreferrer">Solicitar una propuesta</a>
+        </div>
+        <div class="services-grid">
+          <article class="service-item">
+            <strong>Páginas y aplicaciones web</strong>
+            <p>Landing pages, portales, ecommerce y experiencias responsive pensadas para convertir visitas en oportunidades.</p>
+          </article>
+          <article class="service-item">
+            <strong>Sistemas internos</strong>
+            <p>Paneles administrativos, CRM y flujos de trabajo adaptados a la operación real de cada organización.</p>
+          </article>
+          <article class="service-item">
+            <strong>APIs y automatización</strong>
+            <p>Integraciones, procesamiento de datos y herramientas que reducen tareas manuales y errores repetitivos.</p>
+          </article>
+          <article class="service-item">
+            <strong>Optimización y soporte TI</strong>
+            <p>Diagnóstico, mejora de plataformas y acompañamiento técnico para mantener los servicios operativos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="perfil">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">Perfil profesional</p>
+            <h2>Software con visión operativa</h2>
+          </div>
+          <p class="section-intro">Estudiante de Ingeniería de Sistemas en la UPC y egresado de Computación e Informática en Cibertec. Desarrollo soluciones web, aplicaciones de escritorio, APIs y automatizaciones, y aporto experiencia directa en soporte, diagnóstico de incidencias y operación de plataformas.</p>
+        </div>
+
+        <div class="focus-grid" aria-label="Áreas de especialización">
+          <article class="focus-item">
+            <span class="focus-index">01</span>
+            <h3>Desarrollo de software</h3>
+            <p>Aplicaciones backend y full stack, APIs REST, sistemas administrativos y soluciones de escritorio.</p>
+          </article>
+          <article class="focus-item">
+            <span class="focus-index">02</span>
+            <h3>Operaciones TI</h3>
+            <p>Soporte de sistemas, análisis de incidencias, continuidad operativa y mejora de procesos técnicos.</p>
+          </article>
+          <article class="focus-item">
+            <span class="focus-index">03</span>
+            <h3>Automatización y datos</h3>
+            <p>Python, SQL, integraciones, procesamiento documental y herramientas para reducir tareas manuales.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="competencias">
+      <div class="container skills-layout">
+        <div class="skills-copy">
+          <p class="section-kicker">Competencias</p>
+          <h2>Tecnologías aplicadas a problemas reales</h2>
+          <p>Mi perfil combina construcción de producto, integración con hardware, gestión de datos y soporte a usuarios internos.</p>
+        </div>
+        <div class="skill-groups">
+          <div class="skill-group">
+            <h3>Backend y web</h3>
+            <p>PHP, Laravel, Filament, Livewire, React, TypeScript, JavaScript, C#/.NET y Java.</p>
+          </div>
+          <div class="skill-group">
+            <h3>Automatización</h3>
+            <p>Python, Pandoc, Tkinter, APIs REST, SMTP, procesamiento por lotes y MCP.</p>
+          </div>
+          <div class="skill-group">
+            <h3>Datos</h3>
+            <p>PostgreSQL, MySQL, SQL Server, SQLite, Power BI y Excel avanzado.</p>
+          </div>
+          <div class="skill-group">
+            <h3>Operación</h3>
+            <p>Linux, Apache, soporte técnico, diagnóstico de incidencias, Git/GitHub y metodologías ágiles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="experiencia">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">Experiencia</p>
+            <h2>Del soporte a la mejora de sistemas</h2>
+          </div>
+          <p class="section-intro">Experiencia progresiva en la Universidad Nacional de Ingeniería y en entornos privados, atendiendo sistemas, información y procesos críticos.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-entry">
+            <p class="timeline-date">Ene 2026 — Jul 2026</p>
+            <div>
+              <h3>Especialista en Sistemas Informáticos</h3>
+              <p class="timeline-company">Universidad Nacional de Ingeniería · DIAD</p>
+              <ul>
+                <li>Administración y optimización de sistemas institucionales.</li>
+                <li>Diagnóstico de incidencias complejas y mejoras en los procesos de soporte.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="timeline-entry">
+            <p class="timeline-date">Sep 2025 — Dic 2025</p>
+            <div>
+              <h3>Soporte Informático</h3>
+              <p class="timeline-company">Universidad Nacional de Ingeniería · DIAD</p>
+              <ul>
+                <li>Soporte preventivo y correctivo de equipos, sistemas y plataformas institucionales.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="timeline-entry">
+            <p class="timeline-date">May 2025</p>
+            <div>
+              <h3>Auxiliar Programador</h3>
+              <p class="timeline-company">Pinturas del Perú S.A.</p>
+              <ul>
+                <li>Mantenimiento del sistema interno, carga de pagos y atención de fallas de plataforma.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="timeline-entry">
+            <p class="timeline-date">2024 — 2025</p>
+            <div>
+              <h3>Soporte técnico, gestión documental y administración</h3>
+              <p class="timeline-company">Universidad Nacional de Ingeniería</p>
+              <ul>
+                <li>Soporte a RR. HH., control de información y digitalización de documentación institucional.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proyectos">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">Proyectos seleccionados</p>
+            <h2>Producto, automatización e integración</h2>
+          </div>
+          <p class="section-intro">Cada proyecto responde a una necesidad concreta: captar postulantes, automatizar documentos, controlar operaciones, integrar hardware o gestionar información crítica. Puedo aplicar esa misma capacidad a tu próximo proyecto.</p>
+        </div>
+
+        <div class="filter-bar" role="group" aria-label="Filtrar proyectos">
+          <button class="filter-button" type="button" data-filter="all" aria-pressed="true">Todos</button>
+          <button class="filter-button" type="button" data-filter="web" aria-pressed="false">Web</button>
+          <button class="filter-button" type="button" data-filter="automation" aria-pressed="false">Automatización</button>
+          <button class="filter-button" type="button" data-filter="systems" aria-pressed="false">Sistemas</button>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card project-card-featured" data-categories="web systems">
+            <div class="project-visual">
+              <div class="enrollment-preview" aria-hidden="true">
+                <div class="enrollment-panel">
+                  <strong>Portal del postulante</strong>
+                  <div class="form-line"></div>
+                  <div class="form-line short"></div>
+                  <div class="form-line"></div>
+                  <div class="form-line short"></div>
+                </div>
+                <div class="enrollment-panel">
+                  <strong>Panel administrativo</strong>
+                  <div class="admin-metrics">
+                    <span>Inscritos</span>
+                    <span>Pagos</span>
+                    <span>Procesos</span>
+                  </div>
+                  <div class="admin-row"><span>Postulante 018</span><b>Validado</b></div>
+                  <div class="admin-row"><span>Postulante 042</span><b>Pendiente</b></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <p class="project-type">Plataforma full stack destacada</p>
+              <h3>Sistema de Inscripciones UNI</h3>
+              <p class="project-description">Uno de mis proyectos de mayor alcance: backend API con autenticación, colas y gestión de permisos; panel administrativo para operar los procesos; y frontend independiente para la inscripción de postulantes.</p>
+              <div class="tags"><span class="tag">Laravel</span><span class="tag">Filament</span><span class="tag">Sanctum</span><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">PostgreSQL</span></div>
+              <div class="project-footer"><span class="private-label">Repositorio privado</span></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-categories="web systems">
+            <div class="project-visual">
+              <div class="mini-window" aria-hidden="true">
+                <div class="mini-window-bar"><i></i><i></i><i></i></div>
+                <div class="crm-flow">
+                  <span>Contacto <small>nuevo mensaje</small></span>
+                  <span>Bot SIA <small>consulta conocimiento</small></span>
+                  <span>Asesor <small>caso asignado</small></span>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <p class="project-type">Aplicación web</p>
+              <h3>SIA · CRM de atención</h3>
+              <p class="project-description">Gestiona conversaciones, casos y derivación de consultas desde respuestas automáticas hacia asesores humanos, con roles y trazabilidad.</p>
+              <div class="tags"><span class="tag">Laravel</span><span class="tag">Filament</span><span class="tag">Livewire</span><span class="tag">PostgreSQL</span></div>
+              <div class="project-footer"><span class="private-label">Repositorio privado</span></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-categories="automation systems">
+            <div class="project-visual">
+              <div class="document-flow" aria-hidden="true">
+                <span class="document">DOCX</span>
+                <span class="flow-arrow">→</span>
+                <span class="document tex">TeX</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <p class="project-type">Automatización documental</p>
+              <h3>Word a LaTeX</h3>
+              <p class="project-description">Convierte documentos individuales, carpetas o bancos completos; procesa imágenes y genera archivos LaTeX con metadatos OCAD.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">Pandoc</span><span class="tag">Tkinter</span><span class="tag">Pillow</span></div>
+              <div class="project-footer"><span class="private-label">Repositorio privado</span></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-categories="systems web">
+            <div class="project-visual visual-biometric">
+              <img src="assets/smart-biometric-hub.png" alt="Identidad visual de SmartBiometricHub" width="256" height="256">
+            </div>
+            <div class="project-content">
+              <p class="project-type">Biometría y API</p>
+              <h3>SmartBiometricHub</h3>
+              <p class="project-description">Registro y verificación 1:N de huellas con lector ZKTeco ZK9500, aplicación Windows y API para postulantes, procesos y eventos biométricos.</p>
+              <div class="tags"><span class="tag">C#</span><span class="tag">.NET</span><span class="tag">Laravel</span><span class="tag">API REST</span></div>
+              <div class="project-footer"><span class="private-label">Repositorios privados</span></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-categories="web">
+            <div class="project-visual">
+              <div class="store-preview" aria-hidden="true">
+                <strong>FerreteriAAA</strong>
+                <div class="store-row"><i></i><span>Taladro percutor</span><b>S/ 249</b></div>
+                <div class="store-row"><i></i><span>Kit de herramientas</span><b>S/ 159</b></div>
+                <div class="store-row"><i></i><span>Cotización activa</span><b>3 ítems</b></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <p class="project-type">Proyecto de titulación</p>
+              <h3>FerreteriAAA</h3>
+              <p class="project-description">Ecommerce y gestión de ferretería con productos, clientes, cotizaciones, ventas, autorización por roles y reportes en PDF.</p>
+              <div class="tags"><span class="tag">ASP.NET Core MVC</span><span class="tag">EF Core</span><span class="tag">MySQL</span><span class="tag">Azure Blob</span></div>
+              <div class="project-footer"><span class="private-label">Repositorio privado</span></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-categories="web">
+            <div class="project-visual visual-finance">
+              <img src="assets/finanzas-logo.webp" alt="Logotipo del sistema de control financiero" width="720" height="720">
+            </div>
+            <div class="project-content">
+              <p class="project-type">Finanzas personales</p>
+              <h3>Sistema de control financiero</h3>
+              <p class="project-description">Administra billeteras, transacciones, tarjetas, préstamos, presupuestos, metas, alertas y reportes mensuales.</p>
+              <div class="tags"><span class="tag">Laravel</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Inertia</span></div>
+              <div class="project-footer"><span class="private-label">Repositorio privado</span></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-categories="automation systems">
+            <div class="project-visual">
+              <div class="attendance-preview" aria-hidden="true">
+                <div class="camera-frame">Cámara activa · captura validada</div>
+                <p><span>DNI</span><strong>••••2587</strong></p>
+                <p><span>Tipo</span><strong>ENTRADA</strong></p>
+                <p><span>Estado</span><strong>REGISTRADO</strong></p>
+              </div>
+            </div>
+            <div class="project-content">
+              <p class="project-type">Aplicación de escritorio</p>
+              <h3>Registro de asistencia</h3>
+              <p class="project-description">Registra entradas y salidas con captura fotográfica, consulta de personal en Excel, persistencia SQLite y exportación de resultados.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Tkinter</span><span class="tag">SQLite</span></div>
+              <div class="project-footer"><span class="private-label">Repositorio privado</span></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-categories="web systems">
+            <div class="project-visual">
+              <table class="followup-table" aria-hidden="true">
+                <thead><tr><th>Postulante</th><th>Acción</th><th>Estado</th></tr></thead>
+                <tbody>
+                  <tr><td>Registro 018</td><td>Contacto</td><td>En proceso</td></tr>
+                  <tr><td>Registro 042</td><td>Pago</td><td>Validado</td></tr>
+                  <tr><td>Registro 071</td><td>Seguimiento</td><td>Pendiente</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="project-content">
+              <p class="project-type">Gestión institucional</p>
+              <h3>Seguimiento DIAD</h3>
+              <p class="project-description">Seguimiento de postulantes de Admisión UNI con asignaciones, acciones, pagos, permisos por rol e importación y exportación de datos.</p>
+              <div class="tags"><span class="tag">Laravel</span><span class="tag">Filament</span><span class="tag">Excel</span><span class="tag">TCPDF</span></div>
+              <div class="project-footer"><span class="private-label">Repositorio privado</span></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-categories="automation systems">
+            <div class="project-visual visual-uni">
+              <img src="assets/uni-logo.png" alt="Logotipo de la Universidad Nacional de Ingeniería" width="413" height="128">
+            </div>
+            <div class="project-content">
+              <p class="project-type">Automatización operativa</p>
+              <h3>Envío masivo de emails</h3>
+              <p class="project-description">Distribuye campañas entre múltiples cuentas SMTP, personaliza plantillas desde Excel o CSV y permite reanudar envíos con checkpoints.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">SMTP</span><span class="tag">Pandas</span><span class="tag">Excel</span></div>
+              <div class="project-footer"><a class="project-link" href="https://github.com/PowerST2/envio-email-masivo" target="_blank" rel="noreferrer">Ver código ↗</a></div>
+            </div>
+          </article>
+
+          <article class="project-card" data-categories="automation systems">
+            <div class="project-visual">
+              <div class="terminal" aria-hidden="true">
+                <div><b>$</b> list_databases</div>
+                <div><b>→</b> list_tables</div>
+                <div><b>→</b> describe_table</div>
+                <div><b>→</b> execute_query</div>
+              </div>
+            </div>
+            <div class="project-content">
+              <p class="project-type">Integración de herramientas</p>
+              <h3>MCP PostgreSQL</h3>
+              <p class="project-description">Servidor MCP para inspeccionar esquemas y operar bases PostgreSQL locales o remotas mediante conexiones configuradas por entorno.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">MCP</span><span class="tag">PostgreSQL</span><span class="tag">psycopg2</span></div>
+              <div class="project-footer"><a class="project-link" href="https://github.com/PowerST2/MCP-Postgress" target="_blank" rel="noreferrer">Ver código ↗</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="formacion">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">Formación</p>
+            <h2>Base técnica y aprendizaje continuo</h2>
+          </div>
+          <p class="section-intro">Formación universitaria y técnica complementada con proyectos aplicados y experiencia directa en entornos institucionales.</p>
+        </div>
+        <div class="education-grid">
+          <div class="education-column">
+            <h3>Estudios</h3>
+            <div class="education-item">
+              <strong>Universidad Peruana de Ciencias Aplicadas</strong>
+              <p>Ingeniería de Sistemas · 2025 — Actualidad</p>
+            </div>
+            <div class="education-item">
+              <strong>Instituto Superior Cibertec</strong>
+              <p>Computación e Informática · Egresado, 2024</p>
+            </div>
+          </div>
+          <div class="education-column">
+            <h3>Certificaciones</h3>
+            <div class="education-item">
+              <strong>Ortografía y Redacción</strong>
+              <p>EIGRA / MINEDU · 114 horas</p>
+            </div>
+            <div class="education-item">
+              <strong>Gestión Pública</strong>
+              <p>Universidad Nacional de Ingeniería · 14 horas</p>
+            </div>
+            <div class="education-item">
+              <strong>Excel Básico</strong>
+              <p>Aprendemás / Interbank · 5 horas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contacto">
+      <div class="container contact-layout">
+        <div>
+          <h2>¿Necesitas una página, un sistema o automatizar un proceso?</h2>
+          <p>Conversemos sobre el problema, el flujo actual y el resultado que buscas. Puedo ayudarte a convertir esa necesidad en una solución funcional y mantenible.</p>
+        </div>
+        <div class="contact-links">
+          <div class="contact-actions">
+            <a class="button button-secondary" href="https://wa.me/51995191368?text=Hola%20Diego%2C%20quiero%20conversar%20sobre%20un%20proyecto" target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
+          </div>
+          <a href="mailto:diegostd99@gmail.com">diegostd99@gmail.com</a>
+          <a href="tel:+51995191368">+51 995 191 368</a>
+          <a href="https://github.com/PowerST2" target="_blank" rel="noreferrer">github.com/PowerST2 ↗</a>
+          <a href="assets/CV-Diego-Davila-Diaz.pdf" download>Descargar CV</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="contact-float" href="https://wa.me/51995191368?text=Hola%20Diego%2C%20quiero%20conversar%20sobre%20un%20proyecto" target="_blank" rel="noreferrer">Hablemos de tu proyecto</a>
+
+  <footer>
+    <div class="container footer-layout">
+      <p>Diego Stefano Dávila Díaz</p>
+      <p>Los Olivos, Lima · <span id="year">2026</span></p>
+    </div>
+  </footer>
+
+  <script>
+    const matchesFilter = (categories, filter) =>
+      filter === "all" || categories.split(" ").includes(filter);
+
+    document.querySelectorAll(".filter-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+
+        document.querySelectorAll(".filter-button").forEach((item) => {
+          item.setAttribute("aria-pressed", String(item === button));
+        });
+
+        document.querySelectorAll(".project-card").forEach((card) => {
+          card.hidden = !matchesFilter(card.dataset.categories, filter);
+        });
+      });
+    });
+
+    document.documentElement.classList.add("motion-ready");
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".section-header, .services-heading, .service-item, .focus-item, .skill-group, .timeline-entry, .project-card, .education-column").forEach((element, index) => {
+      element.classList.add("reveal");
+      element.style.transitionDelay = `${(index % 3) * 70}ms`;
+      revealObserver.observe(element);
+    });
+
+    const navLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((link) => {
+          link.classList.toggle("is-active", link.getAttribute("href") === `#${entry.target.id}`);
+        });
+      });
+    }, { rootMargin: "-35% 0px -55%" });
+
+    navLinks.forEach((link) => {
+      const section = document.querySelector(link.getAttribute("href"));
+      if (section) sectionObserver.observe(section);
+    });
+
+    const floatingContact = document.querySelector(".contact-float");
+    let heroVisible = true;
+    let contactVisible = false;
+    const updateFloatingContact = () => {
+      floatingContact.classList.toggle("is-visible", !heroVisible && !contactVisible);
+    };
+
+    new IntersectionObserver(([entry]) => {
+      heroVisible = entry.isIntersecting;
+      updateFloatingContact();
+    }, { threshold: 0.08 }).observe(document.querySelector(".hero"));
+
+    new IntersectionObserver(([entry]) => {
+      contactVisible = entry.isIntersecting;
+      updateFloatingContact();
+    }, { threshold: 0.1 }).observe(document.querySelector(".contact-section"));
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+    console.assert(matchesFilter("web systems", "web") && matchesFilter("web", "all"), "Filtro de proyectos");
+    console.assert(document.querySelectorAll(".project-card").length === 10, "Cantidad de proyectos");
+  </script>
+</body>
+</html>
